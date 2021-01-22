@@ -4,6 +4,17 @@
 <head>
     <title>Aria Roles</title>
     <script>
+        function changeCheckbox(event) {
+    let item = document.getElementById('chkPref');
+    switch(item.getAttribute('aria-checked')) {
+        case "true":
+            item.setAttribute('aria-checked', "false");
+            break;
+        case "false":
+            item.setAttribute('aria-checked', "true");
+            break;
+    }
+}
         function formSubmit() {
             document.forms["myForm"].submit();
         }
@@ -162,8 +173,9 @@
     <h2>Button role with button tag</h2>
     <button id="saveChanges">Save</button>
     <h2>ARIA: checkbox role</h2>
-    <span role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="chk1-label">
-    </span> <label id="chk1-label">Remember my preferences</label>
+  <span role="checkbox" id="chkPref" aria-checked="false" onclick="changeCheckbox()" onKeyPress="changeCheckbox()"
+   tabindex="0" aria-labelledby="chk1-label"></span>
+<label id="chk1-label" onclick="changeCheckbox()" onKeyPress="changeCheckbox()">Remember my preferences</label>
 
     <h2>Input type checkbox</h2>
     <input type="checkbox" id="chk1-label">
