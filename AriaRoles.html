@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aria Roles</title>
+    <script>
+        function formSubmit() {
+            document.forms["myForm"].submit();
+        }
+      
+        /* basic JavaScript to update a timer */
+        function startTimer(timerName) {
+        // get the number of seconds
+        let timer = document.getElementById(timerName),
+        seconds = parseInt(timer.innerText);
+        // remove a second
+        // updated the content of timer
+        timer.innerText = --seconds
+        // if timer != 0, setTimeout
+        if (seconds) {
+        setTimeout( function() {
+        startTimer(timerName);
+        }, 1000);
+        }
+        }
+
+        function triggerAlert() {
+        var alertEl = document.querySelector('.alert');
+        alertEl.addAttribute("role", "alert");
+        }
+
+    </script>
+</head>
+
+<body>
+    <style>
+        body {
+            color:#acbad0;
+          background-color: #344B6E;
+        }
+        </style>
+    <h1>Aria roles</h1>
+
+    <h2>ARIA: banner role</h2>
+    <div role="banner">
+        <p>Identifying page subsections for easy navigation</p>
+    </div>
+    <h2>ARIA: banner role with header tag</h2>
+    <header>
+        <p>Identifying page subsections for easy navigation</p>
+    </header>
+    <h2>ARIA: navigation role</h2>
+    <div role="navigation" aria-label="Main">
+        Navigation role
+    </div>
+   
+    <h2>ARIA: main role</h2>
+    <div id="main" role="main">
+        Main content
+    </div>
+    <h2> ARIA: Complementary role</h2>
+    <div role="complementary">
+       complementary section content
+    </div>
+    <h2>ARIA: region role</h2>
+    <div role="region" aria-label="Example">
+        Region content
+    </div>
+
+    <h2>ARIA: contentinfo role</h2>
+    <div role="contentinfo">
+       footer content
+    </div>
+     <h2>ARIA: search role</h2>
+    <form id="search" role="search">
+        <label for="search-input">Search this site</label>
+        <input type="search" id="search-input" name="search" spellcheck="false">
+        <input value="Submit" type="submit">
+    </form>
+    <h2>ARIA: form role</h2>
+    <div role="form" id="contact-info" aria-label="Contact information">
+        form content
+    </div>
+
+    <h2>ARIA: mark role</h2>
+    <span role="mark" aria-details="thread-1">end of the guitar solo</span>, before fading away sharply.</p>
+   
+    
+    <h2>ARIA: textbox role</h2>
+    <!-- Simple text input field -->
+    <div id="txtboxLabel">Enter your five-digit zipcode</div>
+    <div role="textbox" contenteditable="true" aria-placeholder="5-digit zipcode" aria-labelledby="txtboxLabel"></div>
+    <h2>ARIA: textbox role with input tag</h2>
+    <label for="txtbox">Enter your five-digit zipcode</label>
+    <input type="text" placeholder="5-digit zipcode" id="txtbox" />
+
+    <h2>ARIA: suggestion role</h2>
+    <p>Freida’s pet is a
+        <span role="suggestion">
+            <span role="deletion">black Cat called Luna</span>
+            <span role="insertion">purple Tyrannosaurus Rex called Tiny</span>
+        </span>.
+    </p>
+    <h2>ARIA: tab role</h2>
+    <button role="tab" aria-selected="true" aria-controls="tabpanel-id" id="tab-id">Tab label</button>
+    <h2>ARIA: switch role</h2>
+    <button type="button" role="switch" aria-checked="true" id="speakerPower" class="switch">
+        <span>off</span>
+        <span>on</span>
+    </button>
+    <label for="speakerPower" class="switch">Speaker power</label>
+  
+  
+    <h2>ARIA: Image role</h2>
+    <div role="img" aria-label="Description of the overall image">
+        <img src="graphic1.png" alt="">
+        <img src="graphic2.png">
+    </div>
+    <div role="heading" aria-level="2">ARIA: heading role</div>
+    <h2>ARIA: list role</h2>
+    <section role="list">
+        <div role="listitem">List item 1</div>
+        <div role="listitem">List item 2</div>
+        <div role="listitem">List item 3</div>
+    </section>
+    <h2>ARIA: listbox role</h2>
+    <p id="listbox1label" role="label">Select a color:</p>
+    <div role="listbox" tabindex="0" id="listbox1" aria-labelledby="listbox1label"
+        onclick="return listItemClick(event);" onkeydown="return listItemKeyEvent(event);"
+        onkeypress="return listItemKeyEvent(event);" aria-activedescendant="listbox1-1">
+        <div role="option" id="listbox1-1" class="selected" aria-selected="true">Green</div>
+        <div role="option" id="listbox1-2">Orange</div>
+        <div role="option" id="listbox1-3">Red</div>
+        <div role="option" id="listbox1-4">Blue</div>
+        <div role="option" id="listbox1-5">Violet</div>
+        <div role="option" id="listbox1-6">Periwinkle</div>
+    </div>
+    <h2>ARIA: listbox role with select tag</h2>
+    <label for="listbox1">Select a color:</label>
+    <select id="listbox1">
+        <option selected>Green</option>
+        <option>Orange</option>
+        <option>Red</option>
+        <option>Blue</option>
+        <option>Violet</option>
+        <option>Periwinkle</option>
+    </select>
+
+    <h2>ARIA: alert role</h2>
+    <p role="alert" style="display: none;">The alert will trigger when the element becomes visible.</p>
+    <button type="button" onclick="triggerAlert">
+        <div>Trigger alert</div>
+    </button>
+    <p class="alert">The alert will trigger when the button is pressed.</p>
+    <h2>ARIA: application role</h2>
+    <div role="application">Application role</div>
+    <h2>ARIA: timer role</h2>
+    <div id="clock" role="timer" aria-live="off">20</div>
+    <button onclick="startTimer('clock')">start</button>
+    <h2>ARIA: button role</h2>
+    <div id="saveChanges" tabindex="0" role="button" aria-pressed="false">Save</div>
+    <h2>Button role with button tag</h2>
+    <button id="saveChanges">Save</button>
+    <h2>ARIA: checkbox role</h2>
+    <span role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="chk1-label">
+    </span> <label id="chk1-label">Remember my preferences</label>
+
+    <h2>Input type checkbox</h2>
+    <input type="checkbox" id="chk1-label">
+    <label for="chk1-label">Remember my preferences</label>
+    <h2>ARIA: Comment role</h2>
+    <p>The last half of the song is a slow-rising crescendo that peaks at the
+        <span role="mark" aria-details="thread-1">end of the guitar solo</span>, before fading away sharply.
+    </p>
+
+    <div role="comment" id="thread-1" data-author="chris">
+        <h3>Chris said</h3>
+        <p class="comment-text">I really think this moment could use more cowbell.</p>
+        <p><time datetime="2019-03-30T19:29">March 30 2019, 19:29</time></p>
+    </div>
+    <h2>ARIA: Grid role</h2>
+    <div role="grid" aria-colcount="6">
+        <div role="rowgroup">
+            <div role="row">
+                <div role="columnheader" aria-colindex="1">First name</div>
+                <div role="columnheader" aria-colindex="2">Last name</div>
+                <div role="columnheader" aria-colindex="5">City</div>
+                <div role="columnheader" aria-colindex="6">Zip</div>
+            </div>
+        </div>
+        <div role="rowgroup">
+            <div role="row">
+                <div role="gridcell" aria-colindex="1">Debra</div>
+                <div role="gridcell" aria-colindex="2">Burks</div>
+                <div role="gridcell" aria-colindex="5">New York</div>
+                <div role="gridcell" aria-colindex="6">14127</div>
+            </div>
+        </div>
+        …
+    </div>
+
+    <h2>ARIA: cell role</h2>
+
+    <h3>Table 1</h3>
+    <tr role="row">
+        <td role="cell">France</td>
+        <td role="cell">67 million</td>
+    </tr>
+
+    <h3>Table 2</h3>
+    <div role="table" aria-label="Semantic Elements" aria-describedby="semantic_elements_table_desc" aria-rowcount="81">
+        <div id="semantic_elements_table_desc">Semantic Elements to use instead of ARIA's roles</div>
+        <div role="rowgroup">
+            <div role="row">
+                <span role="columnheader" aria-sort="none" aria-rowindex="1">ARIA Role</span>
+                <span role="columnheader" aria-sort="none" aria-rowindex="1">Semantic Element</span>
+            </div>
+        </div>
+        <div role="rowgroup">
+            <div role="row">
+                <span role="cell" aria-rowindex="11">header</span>
+                <span role="cell" aria-rowindex="11">h1</span>
+            </div>
+            <div role="row">
+                <span role="cell" aria-rowindex="16">header</span>
+                <span role="cell" aria-rowindex="16">h6</span>
+            </div>
+            <div role="row">
+                <span role="cell" aria-rowindex="18">rowgroup</span>
+                <span role="cell" aria-rowindex="18">thead</span>
+            </div>
+            <div role="row">
+                <span role="cell" aria-rowindex="24">term</span>
+                <span role="cell" aria-rowindex="24">dt</span>
+            </div>
+        </div>
+    </div>
+    <h2>ARIA: dialog role</h2>
+    <div role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc">
+        <h2 id="dialog1Title">Your personal details were successfully updated</h2>
+        <p id="dialog1Desc">You can change your details at any time in the user account section.</p>
+        <button>Close</button>
+    </div>
+
+    <h2>ARIA: figure role</h2>
+    <div role="figure" aria-labelledby="caption">
+        <img src="image.png" alt="full alternative image description">
+        <p id="caption">Figure 1: The caption</p>
+    </div>
+    <h2>ARIA: feed role</h2>
+    <section role="feed" aria-busy="false">
+        Feed role
+        <article aria-posinset="427" aria-setsize="-1">Bla bla bla</article>
+        <article aria-posinset="428" aria-setsize="-1">Bla bla bla</article>
+        <article aria-posinset="429" aria-setsize="-1">Bla bla bla</article>
+    </section>
+    <h2>ARIA: document role</h2>
+    <div id="InfoText" role="document" tabindex="0">
+        <p>Some informational text goes here.</p>
+
+        <h3>ARIA: article role</h3>
+        <div role="article"> article role </div>
+
+        <h3>ARIA: article role with a article tag</h3>
+        <article>
+            ... controls to interact with the article, share it, etc. ...
+        </article>
+      
+</body>
+
+</html>
