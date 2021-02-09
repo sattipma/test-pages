@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>frame-title</title>
+</head>
+<body>
+<p><strong>Rule id:</strong> frame-title</p>
+<p><strong>Tags:</strong>    wcag2a, wcag241</p>
+<p><strong>Description:</strong>    Ensure that all iframe and frame elements contain a unique and non-empty title attribute.</p>
+<br>
+​
+<table border="1" width="100%" role=presentation>
+	<tr>
+		<td align=center>Pass/Fail</td>
+		<td align=center>Example</td>
+		<td align=center>Code</td>
+	</tr>
+	
+	<tr>
+		<td>Pass</td>
+		<td>
+			<iframe src="http://testsites.dequelabs.com/forms/simple.html" width="300" height="300" title="SimulAT 2.0 Test File" scrolling="yes">
+      			</iframe>
+		</td>
+		<td>
+			<code><xmp>
+			<iframe src="http://testsites.dequelabs.com/forms/simple.html" width="300" height="300" title="SimulAT 2.0 Test File" scrolling="yes">
+      			</iframe>
+			</xmp></code>
+		</td>
+	</tr>
+​
+	<tr>
+		<td>Fail</td>
+		<td>
+			<iframe src="http://qateam.dequecloud.com/axe/color-contrast.html" width="300" height="300" scrolling="yes">
+			</iframe>
+		</td>
+		<td>
+			<code><xmp>
+			<iframe src="http://qateam.dequecloud.com/axe/color-contrast.html" width="300" height="300" scrolling="yes">
+			</iframe>
+			</xmp></code>
+		</td>
+	</tr>				
+</table>
+​
+​
+</body>
