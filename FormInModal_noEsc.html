@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-danger btn-md" id="myBtn2">Trigger Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title">Simple Form</h4>
+        </div>
+        <div class="modal-body">
+            <form>
+                <p>No Dismiss mechanism provided to close the modal. Need to Submit the form to close the modal</p>
+                 <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="button" onclick="formSubmit()" value="Send form data!">
+                </form>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+ 
+<script>
+$(document).ready(function(){
+  $("#myBtn2").click(function(){
+    $("#myModal2").modal({keyboard: false});
+  });
+});
+</script>
+
+</body>
+</html>
