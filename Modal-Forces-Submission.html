@@ -30,7 +30,7 @@
         <input type="text" id="fname" name="fname"><br><br>
         <label for="lname">Last name:</label>
         <input type="text" id="lname" name="lname"><br><br>
-        <input type="button" onclick="formSubmit()" value="Send form data!">
+        <input type="button" id="myBtn" value="Send form data!" onclick="submit()">
                 </form>
         </div>
         
@@ -44,6 +44,12 @@
 $(document).ready(function(){
   $("#myBtn2").click(function(){
     $("#myModal2").modal({keyboard: false});
+  function submit()
+  {
+    document.getElementById("myBtn").submit();
+  }
+
+
   });
 });
 </script>
