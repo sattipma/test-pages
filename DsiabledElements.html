@@ -1,0 +1,50 @@
+<html lang="en">
+    <head>
+        <title>Interactive Elements - Disabled</title>
+    </head>
+    <body>
+        <h1>Disabled Elements</h1>
+        <P>Please find the disabled interactive elements below</P>
+        <p>Disable a group of related form elements:</p>
+        <fieldset disabled>
+            <legend>Personalia:</legend>
+            Name: <input type="text"><br>
+            Email: <input type="text"><br>
+            Date of birth: <input type="text">
+          </fieldset>
+          <p>An HTML form with a disabled input field:</p>
+          <form action="/action_page.php">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname" disabled><br>
+            <input type="submit" value="Submit">
+          </form>
+          <p>A disabled option-group:</p>
+          <select>
+            <optgroup label="German Cars" disabled>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </optgroup>
+          </select>
+          <p>A drop-down list with one disabled option:</p>
+          <select>
+            <option value="volvo" disabled>Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="vw">VW</option>
+            <option value="audi">Audi</option>
+          </select>
+          <p>A disabled drop-down list:</p>
+          <select disabled>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+          <p>A disabled text area:</p>
+          <textarea disabled>
+            Disabled text area....
+            </textarea>
+            <p>A disabled button:</p>
+        <button type="button" disabled>Click Me!</button>
+
+    </body>
+</html>
