@@ -1,0 +1,32 @@
+<html lang="en">
+    <head>
+        <title>Interactive Elements - Different state buttons</title>
+    </head>
+    <body>
+        <h1>Different state buttons</h1>
+        <p>A disabled button with disabled attriute</p>
+        <button type="button" disabled>Button 1</button>
+
+        <p>A disabled button with disabled="true" attriute</p>
+        <button type="button" disabled="true">Button 2</button>
+        
+        <p>A disabled button with aria-disabled="true" attriute</p>
+        <button id="myBtn" type="button" aria-disabled="true">Button 3</button>
+        
+        <p>A button with aria-disabled="true" attriute</p>
+        <button id="myBtn3" type="button" aria-disabled="true">Button 4</button>
+
+        <p>A non-disabled button with aria-disabled="false" attriute</p>
+        <button id="myBtn1" type="button" aria-disabled="false">Button 5</button>
+
+        <p>A normal button without any attriutes</p>
+        <button id="myBtn4" type="button">Button 6</button>
+        
+        <!-- <script>
+            document.querySelectorAll("button").disabled="disabled"
+       </script> -->
+        <script>
+            document.getElementById("myBtn").disabled = true;
+        </script>
+    </body>
+</html>
