@@ -2,10 +2,26 @@
     <head>
         <title>Interactive Elements - Pressed state buttons</title>
         <style>
-           #btn1,#btn2,#btn3
+           #btn1,#btn2,#btn3,#btn6
            {
             box-shadow: 0 5px 5px rgb(0, 0, 0);
            }
+        
+        [role="button"] {
+            padding: 2px;
+            background-color:rgb(225, 225, 225);
+            color: black;
+            cursor: default;
+          }
+          [role="button"]:hover,
+          [role="button"]:focus,
+          [role="button"]:active {
+             background-color: rgb(225, 225, 225);
+             color: navy;
+          }
+          ul {
+              list-style: none;
+          }
         </style>
     </head>
     <body>
@@ -21,6 +37,10 @@
         <button id="btn4" type="button" aria-pressed="true">Button 4</button>
         <p>A Normal button with aria-pressed="false"</p>
         <button id="btn5" type="button" aria-pressed="false">Button 5</button>
+
+        <p>A Pressed button(Using role="button") without any aria-pressed attributes</p>
+        <!-- <button type="button" id="btn1">Button 5</button> -->
+        <span role="button" id="btn6" tabindex="0">Button 6 </span>
         
     </body>
 </html>
