@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+        <title>Interactive Elements - Pressed state buttons</title>
+        <style>
+           #btn1,#btn2,#btn3
+           {
+            box-shadow: 0 5px 5px rgb(0, 0, 0);
+           }
+        </style>
+    </head>
+    <body>
+        
+        <h1>Different state buttons(Pressed)</h1>
+        <p>A Pressed button without any aria-pressed attributes</p>
+        <button type="button" id="btn1">Button 1</button>
+        <p>A Pressed button with any aria-pressed="true" attributes</p>
+        <button type="button" aria-pressed="true" id="btn2">Button 2</button>
+        <p>A Pressed button with any aria-pressed="false" attributes</p>
+        <button type="button" aria-pressed="false" id="btn3">Button 3</button>
+        <p>A Normal button with aria-pressed="true"</p>
+        <button id="btn4" type="button" aria-pressed="true">Button 4</button>
+        <p>A Normal button with aria-pressed="false"</p>
+        <button id="btn5" type="button" aria-pressed="false">Button 5</button>
+        
+    </body>
+</html>
