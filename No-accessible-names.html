@@ -1,0 +1,337 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://use.fontawesome.com/99d8f1b106.css" media="all" rel="stylesheet">
+    <title>interactive elements tool test page</title>
+    <style>
+      #button[aria-disabled='true'] {
+        color: #999;
+        border-color: transparent;
+        background: #dcd8d8;
+      }
+
+      #button[aria-expanded='true'] {
+        padding-bottom: 50px;
+      }
+
+      #button[aria-pressed='true'] {
+        box-shadow: inset 0 0 5px #000;
+      }
+
+      [role='checkbox'] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        box-shadow: 0 0 0 2px #ccc;
+      }
+
+      [aria-disabled='true'] {
+        background: #ccc;
+      }
+
+      [role='checkbox']::before {
+        content: '';
+      }
+
+      [role='checkbox'][aria-checked='true']::before {
+        content: 'X';
+      }
+
+      [role='tab'] {
+        border: 3px solid #ccc;
+        border-bottom: 0;
+        display: inline-block;
+        padding: 0 5px;
+      }
+
+      [role='tab'][aria-selected='true'] {
+        border-color: teal;
+      }
+
+      ul {
+        padding: 1em 0;
+        border: 2px solid;
+        border-radius: 10px;
+      }
+
+      li {
+        padding: 10px;
+      }
+
+      li:nth-child(odd) {
+        background: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1012.0" data-gr-ext-installed="">
+    <div id="wrapper">
+      <header class="hero is-medium is-info is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Interactive Elements IGT test page
+            </h1>
+            <a class="button" href="../index.html">
+            </a>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="section">
+          <h2 class="subtitle">
+            Dynamic states and stuff...
+          </h2>
+          <div class="container">
+            <button id="button" aria-expanded="false"></button>
+            <div role="group">
+              <label>
+                <input type="checkbox" id="disabled-button"></label>
+              <label>
+                <input type="checkbox" id="expanded-button"></label>
+              <label>
+                <input type="checkbox" id="pressed-button"></label>
+            </div>
+          </div>
+          <hr>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div id="checkbox" role="checkbox" aria-label="checkboxx"></div>
+            <div role="group">
+              <label>
+                <input type="checkbox" id="disabled-checkbox"></label>
+              <label>
+                <input type="checkbox" id="checked-checkbox"></label>
+            </div>
+          </div>
+          <hr>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div id="tab" role="tab" tabindex="0"></div>
+            <div role="group">
+              <label>
+                <input type="checkbox" id="disabled-tab">
+                Disabled
+              </label>
+              <label>
+                <input type="checkbox" id="selected-tab">
+                Selected
+              </label>
+            </div>
+          </div>
+          <hr>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <h2 class="subtitle">
+              All of the below elements should be picked up
+              by tool
+            </h2>
+            <ul>
+              <li>
+                <a href="#"></a>
+              </li>
+              <li>
+                <input type="button" value="">
+              </li>
+              <li>
+                <input type="submit" value="">
+              </li>
+              <li>
+                <input type="reset" value="">
+              </li>
+              <li>
+                <details>
+                  <summary></summary></details>
+              </li>
+              <li>
+                <div role="button"></div>
+              </li>
+              <li>
+                <select aria-label="select list">
+                  <option></option>
+                  <option>other option</option>
+                </select>
+              </li>
+              <li>
+                <textarea aria-label="textarea"></textarea>
+              </li>
+              <li>
+                <div role="combobox" aria-label="combobox"></div>
+              </li>
+              <li>
+                <div role="listbox" aria-label="listbox"></div>
+              </li>
+              <li>
+                <div role="option" aria-label="option"></div>
+              </li>
+              <li>
+                <div role="radio" aria-label="radio"></div>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" checked=""></label>
+              </li>
+              <li>
+                <div role="checkbox" aria-label="checkbox"></div>
+              </li>
+              <li>
+                <div role="textbox" aria-label="textbox"></div>
+              </li>
+              <li>
+                <div role="slider" aria-label="slider"></div>
+              </li>
+              <li>
+                <div role="spinbutton" aria-label="spinbutton"></div>
+              </li>
+              <li>
+                <div tabindex="0"></div>
+              </li>
+              <li>
+                <div role="gridcell" aria-label="gridcell"></div>
+              </li>
+              <li>
+                <div role="menuitem" aria-label="menuitem"></div>
+              </li>
+              <li>
+                <div role="menuitemcheckbox" aria-label="menuitemcheckbox"></div>
+              </li>
+              <li>
+                <div role="menuitemradio" aria-label="menuitemradio"></div>
+              </li>
+              <li>
+                <div role="scrollbar" aria-label="scrollbar"></div>
+              </li>
+              <li>
+                <div role="searchbox" aria-label="searchbox"></div>
+              </li>
+              <li>
+                <div role="switch" aria-label="switch"></div>
+              </li>
+              <li>
+                <div role="treeitem" aria-label="treeitem"></div>
+              </li>
+            </ul>
+          </div>
+          <hr>
+          <h2 class="subtitle">
+            Shadow / iframe interactive elements
+          </h2>
+          <div id="shadow_root"></div>
+          <iframe src="/interactive-elements/frame.html" title="foo"></iframe>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            blah
+            <strong>blah</strong>
+            blah
+            <strong>footer</strong>
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      /**
+       * Shadow DOM with a button
+       */
+      const shadowRoot =
+        document.getElementById('shadow_root')
+      const shadow = shadowRoot.attachShadow({
+        mode: 'open'
+      })
+      const shadowButton = document.createElement('button')
+      shadowButton.innerHTML = 'Shadow button'
+      shadow.append(shadowButton)
+
+      /**
+       * Form controls to manipulate states of the button and custom checkbox
+       */
+
+      const button = document.querySelector('#button')
+      const buttonDisableToggle = document.querySelector(
+        '#disabled-button'
+      )
+      const buttonExpandToggle = document.querySelector(
+        '#expanded-button'
+      )
+      const buttonPressToggle = document.querySelector(
+        '#pressed-button'
+      )
+
+      buttonDisableToggle.addEventListener('change', e => {
+        button.setAttribute(
+          'aria-disabled',
+          `${e.target.checked}`
+        )
+      })
+
+      buttonExpandToggle.addEventListener('change', e => {
+        button.setAttribute(
+          'aria-expanded',
+          `${e.target.checked}`
+        )
+      })
+
+      buttonPressToggle.addEventListener('change', e => {
+        button.setAttribute(
+          'aria-pressed',
+          `${e.target.checked}`
+        )
+      })
+
+      const checkbox = document.querySelector('#checkbox')
+      const checkboxDisableToggle = document.querySelector(
+        '#disabled-checkbox'
+      )
+      const checkboxCheckToggle = document.querySelector(
+        '#checked-checkbox'
+      )
+
+      checkboxDisableToggle.addEventListener(
+        'change',
+        e => {
+          checkbox.setAttribute(
+            'aria-disabled',
+            `${e.target.checked}`
+          )
+        }
+      )
+
+      checkboxCheckToggle.addEventListener('change', e => {
+        checkbox.setAttribute(
+          'aria-checked',
+          `${e.target.checked}`
+        )
+      })
+
+      const tab = document.querySelector('#tab')
+      const tabDisableToggle =
+        document.querySelector('#disabled-tab')
+      const tabSelectToggle =
+        document.querySelector('#selected-tab')
+
+      tabDisableToggle.addEventListener('change', e => {
+        tab.setAttribute(
+          'aria-disabled',
+          `${e.target.checked}`
+        )
+      })
+      tabSelectToggle.addEventListener('change', e => {
+        tab.setAttribute(
+          'aria-selected',
+          `${e.target.checked}`
+        )
+      })
+    </script>
+  
+
+</body></html>
