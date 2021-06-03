@@ -1,0 +1,51 @@
+<html lang="en">
+    <head>
+        <title>Interactive Elements - Pressed/Un-pressed state Checkboxes</title>
+        <style>
+         
+        </style>
+    </head>
+    <body>
+        
+        <h1>Pressed/Un-pressed state Checkbox</h1>
+        <P> Checkbox with proper pressed and unpressed state</P>
+        <input type="checkbox" id="chkbox1" name="chkbox1" value="checkbox1" onclick="myFunction()">
+        <label for="chkbox1"> Checkbox1</label><br>
+        <P> Normal Checkbox without any pressed/un-pressed states</P>
+        <input type="checkbox" id="chkbox2" name="chkbox2" value="checkbox2" checked>
+        <label for="chkbox2"> Checkbox2</label><br>
+        <p> Checkbox with improper pressed and unpressed state</p>
+        <input type="checkbox" id="chkbox3" name="chkbox3" value="checkbox3" onclick="myFunction1()">
+        <label for="chkbox3"> Checkbox3</label><br>
+
+        <script>
+
+   function myFunction() {
+      var x = document.getElementById("chkbox1").checked;
+           if(x!=false)
+           {
+            document.getElementById("chkbox1").setAttribute("aria-pressed","true")
+           }
+           else
+           {
+            document.getElementById("chkbox1").setAttribute("aria-pressed","false")
+           }
+          
+          
+      }
+      function myFunction1() 
+           {
+            var y = document.getElementById("chkbox3").checked;
+           if(y!=false)
+           {
+            document.getElementById("chkbox3").setAttribute("aria-pressed","false")
+           }
+           else
+           {
+            document.getElementById("chkbox3").setAttribute("aria-pressed","true")
+           }
+           }
+        </script>
+        
+    </body>
+</html>
