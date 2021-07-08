@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <head>
+    <title>Structure IGT: Video</title>
+</head>
+
+    <h1>Video example</h1>
+    <h2>Video without any alt text</h2>
 
 <video width="320" height="240" controls>
-  <source src="C:\Users\DQ_Keerthi\Downloads\video.mp4" type="video/mp4">
-  <source src="C:\Users\DQ_Keerthi\Downloads\video.mp4" type="video/ogg">
+  <source src="production ID_4874384.mp4" type="video/mp4">
+  <source src="production ID_4874384.mp4" type="video/ogg">
   Your browser does not support the video tag.
 </video>
+  <h2>Video with appropriate aria-label</h2>
+  <video width="320" height="240"  aria-label="Sample video alt text with aria-label attribute" controls>
+  <source src="production ID_4874384.mp4" type="video/mp4">
+  <source src="production ID_4874384.mp4" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+  <h2>Video in iframe</h2>
+<iframe title="Getting started with axe DevTools Pro" src="https://www.youtube.com/embed/dyU9yrRJ5Eg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
 
 </body>
 </html>
