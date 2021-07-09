@@ -1,9 +1,65 @@
-<html><head></head><body>
+<html>
 
+  <head>
+    <title>Structure IGT: Video</title>
+</head>
+<body>
+  <h1>Audio example</h1>
+    <h2>Audio without any alt text</h2>
 <audio controls="">
   <source src="https://www.fesliyanstudios.com/play-mp3/6560" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+  
+  <h2>Audio with appropriate aria-label</h2>
+  <audio aria-label="Sample audio alt text with aria-label attribute" controls="">
+  <source src="https://www.fesliyanstudios.com/play-mp3/6560"  type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+   <h2>Audio with appropriate aria-labelledby</h2>
+   <p id="audio-title">Provided alt text using aria-labelledby for below audio</p>
+  <audio aria-labelledby="audio-title" controls="">
+  <source src="https://www.fesliyanstudios.com/play-mp3/6560" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+   <h2>Audio with appropriate title attribute</h2>
+  <audio  title="Sample audio alt text with title attribute" controls="">
+  <source src="https://www.fesliyanstudios.com/play-mp3/6560" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+   <h2>Audio with empty aria-label</h2>
+  <audio aria-label="" controls="">
+  <source src="https://www.fesliyanstudios.com/play-mp3/6560"  type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  <h2>Audio with empty aria-labelledby</h2>
+  <p id="audio-title1"></p>
+  <audio aria-labelledby="audio-title1" controls="">
+  <source src="https://www.fesliyanstudios.com/play-mp3/6560" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  
+   <h2>Audio with empty title attribute</h2>
+  <audio  title="" controls="">
+  <source src="https://www.fesliyanstudios.com/play-mp3/6560" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+  
+  <h2>Audio in iframe</h2>
+  <iframe title="Getting started with axe DevTools Pro" src="https://www.fesliyanstudios.com/play-mp3/6560" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
+
+</body>
+</html>
+
+  
+ <h2>Video without any alt text</h2>
+
+<video width="320" height="240" controls>
+  <source src="production ID_4874384.mp4" type="video/mp4">
+  <source src="production ID_4874384.mp4" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+  
 
 </body></html>
