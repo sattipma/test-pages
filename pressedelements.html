@@ -1,0 +1,89 @@
+<html lang="en">
+    <head>
+        
+        <title>Interactive Elements - Pressed elements</title>
+        
+        <style>
+           #btn1,#btn2,#btn3,#btn6
+           {
+            box-shadow: 0 5px 5px rgb(0, 0, 0);
+           }
+        
+        [role="button"] {
+            padding: 2px;
+            background-color:rgb(225, 225, 225);
+            color: black;
+            cursor: default;
+          }
+          [role="button"]:hover,
+          [role="button"]:focus,
+          [role="button"]:active {
+             background-color: rgb(225, 225, 225);
+             color: navy;
+          }
+          ul {
+              list-style: none;
+          }
+        </style>
+    </head>
+    <body>
+        <h1>Pressed Elements</h1>
+        <h2>Different state buttons(Pressed)</h2>
+        <p>A Pressed button without any aria-pressed attributes</p>
+        <button type="button" id="btn1">Button 1</button>
+        <p>A Pressed button with any aria-pressed="true" attributes</p>
+        <button type="button" aria-pressed="true" id="btn2">Button 2</button>
+        <p>A Pressed button with any aria-pressed="false" attributes</p>
+        <button type="button" aria-pressed="false" id="btn3">Button 3</button>
+        <p>A Normal button with aria-pressed="true"</p>
+        <button id="btn4" type="button" aria-pressed="true">Button 4</button>
+        <p>A Normal button with aria-pressed="false"</p>
+        <button id="btn5" type="button" aria-pressed="false">Button 5</button>
+
+        <p>A Pressed button(Using role="button") without any aria-pressed attributes</p>
+        <!-- <button type="button" id="btn1">Button 5</button> -->
+        <span role="button" id="btn6" tabindex="0">Button 6 </span>
+          <body>
+        
+        <h2>Pressed/Un-pressed state Checkbox</h2>
+        <P> Checkbox with proper pressed and unpressed state</P>
+        <input type="checkbox" id="chkbox1" name="chkbox1" value="checkbox1" onclick="myFunction()">
+        <label for="chkbox1"> Checkbox1</label><br>
+        <P> Normal Checkbox without any pressed/un-pressed states</P>
+        <input type="checkbox" id="chkbox2" name="chkbox2" value="checkbox2" checked>
+        <label for="chkbox2"> Checkbox2</label><br>
+        <p> Checkbox with improper pressed and unpressed state</p>
+        <input type="checkbox" id="chkbox3" name="chkbox3" value="checkbox3" onclick="myFunction1()">
+        <label for="chkbox3"> Checkbox3</label><br>
+
+        <script>
+
+   function myFunction() {
+      var x = document.getElementById("chkbox1").checked;
+           if(x!=false)
+           {
+            document.getElementById("chkbox1").setAttribute("aria-pressed","true")
+           }
+           else
+           {
+            document.getElementById("chkbox1").setAttribute("aria-pressed","false")
+           }
+          
+          
+      }
+      function myFunction1() 
+           {
+            var y = document.getElementById("chkbox3").checked;
+           if(y!=false)
+           {
+            document.getElementById("chkbox3").setAttribute("aria-pressed","false")
+           }
+           else
+           {
+            document.getElementById("chkbox3").setAttribute("aria-pressed","true")
+           }
+           }
+        </script>
+        
+    </body>
+</html>
